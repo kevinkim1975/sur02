@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>제출 완료 · 호원앤컴퍼니</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+    .thanks {
+      max-width: 560px;
+      padding: 0 var(--gutter);
+      text-align: center;
+    }
+    .thanks .brandline {
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .checkmark {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      border: 1px solid var(--accent);
+      margin: 0 auto 36px;
+      display: grid; place-items: center;
+      animation: fadein 700ms cubic-bezier(.2,.7,.2,1) both;
+    }
+    .checkmark svg path {
+      stroke-dasharray: 30;
+      stroke-dashoffset: 30;
+      animation: draw 700ms 300ms cubic-bezier(.2,.7,.2,1) forwards;
+    }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes fadein {
+      from { opacity: 0; transform: scale(.92); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    .thanks h1 {
+      font-size: calc(var(--fs-h1) * var(--scale));
+      letter-spacing: var(--ls-h1);
+      font-weight: var(--w-heading);
+      margin: 0 0 24px;
+      color: var(--ink);
+      line-height: 1.3;
+      animation: rise 700ms 200ms cubic-bezier(.2,.7,.2,1) both;
+    }
+    .thanks .msg {
+      font-size: calc(var(--fs-body-l) * var(--scale));
+      letter-spacing: var(--ls-body-l);
+      color: var(--ink-3);
+      line-height: 1.75;
+      margin: 0 auto 56px;
+      max-width: 42ch;
+      animation: rise 700ms 350ms cubic-bezier(.2,.7,.2,1) both;
+    }
+    .countdown {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 22px;
+      border: 1px solid var(--hairline-strong);
+      border-radius: 2px;
+      font-size: calc(var(--fs-small) * var(--scale));
+      letter-spacing: var(--ls-small);
+      color: var(--ink-3);
+      font-feature-settings: "tnum";
+      animation: rise 700ms 500ms cubic-bezier(.2,.7,.2,1) both;
+    }
+    .countdown .num {
+      font-size: calc(var(--fs-h3) * var(--scale));
+      letter-spacing: 0;
+      font-weight: var(--w-medium);
+      color: var(--accent);
+      min-width: 22px;
+      text-align: center;
+      font-feature-settings: "tnum";
+    }
+    .countdown-ring {
+      width: 28px; height: 28px;
+      position: relative;
+    }
+    .countdown-ring svg {
+      transform: rotate(-90deg);
+    }
+    .countdown-ring .track {
+      fill: none;
+      stroke: var(--hairline);
+      stroke-width: 2;
+    }
+    .countdown-ring .arc {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-dasharray: 75.4; /* 2πr, r=12 */
+      transition: stroke-dashoffset 1s linear;
+    }
+    .signature {
+      margin-top: 80px;
+      font-size: calc(var(--fs-eyebrow) * var(--scale));
+      letter-spacing: var(--ls-eyebrow);
+      text-transform: uppercase;
+      color: var(--ink-4);
+      font-weight: var(--w-medium);
+      animation: rise 700ms 650ms cubic-bezier(.2,.7,.2,1) both;
+    }
+  </style>
+</head>
+<body>
+  <main class="thanks">
+    <div class="brandline">
+      <span class="brandmark">H</span>
+      <span>호원앤컴퍼니</span>
+    </div>
+
+    <div class="checkmark" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12.5L10 17.5L19 7.5" stroke="#1a3a52" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <h1>설문이 성공적으로<br/>제출되었습니다.</h1>
+    <p class="msg">
+      귀하의 소중한 응답에 감사드립니다.<br/>
+      답변을 심도있게 검토하여 맞춤 컨설팅 방향을 안내드리겠습니다.
+    </p>
+
+    <div class="countdown">
+      <div class="countdown-ring">
+        <svg width="28" height="28" viewBox="0 0 28 28">
+          <circle class="track" cx="14" cy="14" r="12"/>
+          <circle class="arc" cx="14" cy="14" r="12" id="ring-arc" stroke-dashoffset="0"/>
+        </svg>
+      </div>
+      <span>잠시 후 자동으로 닫힙니다 · <span class="num" id="cd">10</span>초</span>
+    </div>
+
+    <div class="signature">Howon &amp; Company · Medical Consulting</div>
+  </main>
+
+  <script>
+    (function(){
+      let n = 10;
+      const total = 10;
+      const arc = document.getElementById('ring-arc');
+      const num = document.getElementById('cd');
+      const C = 2 * Math.PI * 12;
+      arc.setAttribute('stroke-dashoffset', '0');
+      const tick = () => {
+        n -= 1;
+        num.textContent = Math.max(0, n);
+        const off = C * (1 - n / total);
+        arc.style.strokeDashoffset = off;
+        if (n <= 0) {
+          clearInterval(t);
+          // attempt close; fallback to message
+          window.close();
+          setTimeout(() => { num.textContent = '0'; }, 50);
+        }
+      };
+      const t = setInterval(tick, 1000);
+    })();
+  </script>
+</body>
+</html>

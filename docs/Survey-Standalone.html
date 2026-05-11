@@ -1,0 +1,2063 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>바이럴 마케팅 분석 사전 설문 · Howon&Company</title>
+  <style>
+/* ============================================================
+   호원앤컴퍼니 — 바이럴 마케팅 컨설팅 사전 설문 (v2)
+   Editorial / atelier consulting aesthetic
+   ============================================================ */
+
+@import url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Fraunces:opsz,wght@9..144,200;9..144,300;9..144,400&display=swap');
+
+:root {
+  /* Palette — warm ivory paper with deep forest ink */
+  --paper:        #f1ede3;
+  --paper-2:      #ebe6da;
+  --paper-edge:   #e3ddcd;
+  --card:         #faf7ef;
+  --ink:          #1a2422;
+  --ink-2:        #2f3a36;
+  --ink-3:        #5d6660;
+  --ink-4:        #8a8f87;
+  --ink-5:        #b4b5ac;
+  --hairline:     rgba(26, 36, 34, 0.12);
+  --hairline-2:   rgba(26, 36, 34, 0.22);
+  --rule:         rgba(26, 36, 34, 0.55);
+  --accent:       #1f3a30;          /* deep forest */
+  --accent-deep:  #142822;
+  --accent-soft:  rgba(31, 58, 48, 0.07);
+  --gilt:         #9a7e4f;          /* muted brass for ornament */
+  --danger:       #7a3526;
+
+  /* SUIT weights (max 500) */
+  --w-thin:    200;
+  --w-light:   300;
+  --w-regular: 400;
+  --w-medium:  500;
+
+  /* Type scale */
+  --fs-display:  64px; --ls-display: -0.038em;
+  --fs-h1:       40px; --ls-h1:      -0.030em;
+  --fs-h2:       26px; --ls-h2:      -0.022em;
+  --fs-h3:       19px; --ls-h3:      -0.018em;
+  --fs-title:    17px; --ls-title:   -0.014em;
+  --fs-body-l:   16.5px; --ls-body-l: -0.010em;
+  --fs-body:     15px; --ls-body:    -0.006em;
+  --fs-small:    13.5px; --ls-small: -0.002em;
+  --fs-caption:  12px; --ls-caption:  0.012em;
+  --fs-eyebrow:  10.5px; --ls-eyebrow: 0.260em;
+
+  /* Tweak scalars */
+  --scale: 1;
+  --w-body: var(--w-regular);
+  --w-heading: var(--w-medium);
+
+  /* Layout */
+  --container: 720px;
+  --container-wide: 1080px;
+  --gutter: clamp(22px, 4vw, 44px);
+
+  /* Display serif (Latin numerals & ornament only) */
+  --serif: 'Fraunces', 'Cormorant Garamond', 'Times New Roman', serif;
+}
+
+* { box-sizing: border-box; }
+*::selection { background: var(--accent); color: var(--paper); }
+
+html, body {
+  margin: 0; padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'SUIT Variable', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: var(--w-body);
+  font-size: calc(var(--fs-body) * var(--scale));
+  letter-spacing: var(--ls-body);
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  /* subtle paper grain */
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(154, 126, 79, 0.06), transparent 70%),
+    radial-gradient(ellipse 80% 50% at 0% 80%, rgba(31, 58, 48, 0.04), transparent 70%),
+    var(--paper);
+  min-height: 100vh;
+}
+
+/* ---------- Editorial top bar ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--paper);
+  border-bottom: 1px solid var(--hairline);
+  backdrop-filter: saturate(140%) blur(6px);
+}
+.topbar-inner {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 14px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: calc(var(--fs-eyebrow) * var(--scale));
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-2);
+  font-weight: var(--w-medium);
+}
+.monogram {
+  width: 26px; height: 26px;
+  border: 1px solid var(--rule);
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--ink);
+  letter-spacing: 0;
+  line-height: 1;
+}
+.topbar-edition {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--ink-3);
+  letter-spacing: 0.02em;
+}
+.topbar-edition strong {
+  font-style: normal;
+  font-weight: var(--w-medium);
+  font-family: 'SUIT Variable', sans-serif;
+  color: var(--ink-2);
+  margin-left: 6px;
+}
+.progress-rail {
+  height: 1px;
+  background: transparent;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--ink);
+  transition: width 240ms cubic-bezier(.2,.7,.2,1);
+}
+
+/* ---------- Page shell ---------- */
+.page {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  position: relative;
+}
+
+/* ---------- Masthead ---------- */
+.masthead {
+  padding: clamp(72px, 10vw, 128px) 0 clamp(56px, 8vw, 96px);
+  position: relative;
+}
+.masthead::before {
+  /* large editorial numeral as watermark */
+  content: '01';
+  position: absolute;
+  top: clamp(72px, 10vw, 128px);
+  right: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(120px, 18vw, 220px);
+  line-height: 0.85;
+  color: var(--ink);
+  opacity: 0.045;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+}
+.masthead-rule {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 56px;
+  color: var(--ink-3);
+  font-size: calc(var(--fs-eyebrow) * var(--scale));
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  font-weight: var(--w-medium);
+}
+.masthead-rule .line {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+.masthead-rule .serif {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.masthead h1 {
+  font-size: calc(var(--fs-display) * var(--scale));
+  letter-spacing: var(--ls-display);
+  line-height: 1.04;
+  font-weight: var(--w-thin);
+  margin: 0 0 36px;
+  color: var(--ink);
+  text-wrap: balance;
+  max-width: 14ch;
+}
+.masthead h1 .accent {
+  font-weight: var(--w-medium);
+  letter-spacing: var(--ls-display);
+  color: var(--accent);
+}
+.masthead h1 .stroke {
+  display: inline-block;
+  font-weight: var(--w-medium);
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 2px;
+  line-height: 1;
+}
+
+.masthead .lede {
+  font-size: calc(var(--fs-body-l) * var(--scale));
+  letter-spacing: var(--ls-body-l);
+  color: var(--ink-2);
+  max-width: 44ch;
+  line-height: 1.75;
+  white-space: pre-line;
+  font-weight: var(--w-light);
+  margin: 0;
+}
+.masthead .lede::first-letter {
+  /* small drop cap */
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.6em;
+  line-height: 1;
+  float: left;
+  margin: 6px 8px 0 0;
+  color: var(--accent);
+}
+
+.masthead .meta-grid {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.masthead .meta-grid > div {
+  background: var(--paper);
+  padding: 20px 22px;
+}
+.masthead .meta-grid .k {
+  font-size: calc(var(--fs-eyebrow) * var(--scale));
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-4);
+  font-weight: var(--w-medium);
+  margin-bottom: 8px;
+}
+.masthead .meta-grid .v {
+  font-size: calc(var(--fs-title) * var(--scale));
+  letter-spacing: var(--ls-title);
+  color: var(--ink);
+  font-weight: var(--w-light);
+}
+.masthead .meta-grid .v .serif {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  margin-right: 4px;
+}
+@media (max-width: 640px) {
+  .masthead .meta-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Section ---------- */
+.section {
+  padding: clamp(72px, 9vw, 112px) 0;
+  border-top: 1px solid var(--hairline);
+  position: relative;
+}
+.section-head {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 32px;
+  align-items: flex-start;
+  margin-bottom: 56px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--hairline);
+}
+.section-numeral {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 88px;
+  line-height: 0.82;
+  color: var(--accent);
+  letter-spacing: -0.04em;
+  font-feature-settings: "lnum";
+}
+.section-head-r {
+  padding-top: 18px;
+}
+.section-eyebrow {
+  font-size: calc(var(--fs-eyebrow) * var(--scale));
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-4);
+  font-weight: var(--w-medium);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--hairline);
+  margin-left: 4px;
+}
+.section-title {
+  font-size: calc(var(--fs-h1) * var(--scale));
+  letter-spacing: var(--ls-h1);
+  font-weight: var(--w-light);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.15;
+}
+.section-count {
+  font-size: calc(var(--fs-caption) * var(--scale));
+  letter-spacing: var(--ls-caption);
+  color: var(--ink-4);
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 14px;
+}
+@media (max-width: 600px) {
+  .section-head { grid-template-columns: 1fr; gap: 4px; }
+  .section-numeral { font-size: 64px; }
+  .section-head-r { padding-top: 0; }
+}
+
+/* ---------- Question block ---------- */
+.q {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--hairline);
+  position: relative;
+}
+.q:last-child { border-bottom: none; }
+
+.q-head {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+.q-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--accent);
+  letter-spacing: 0;
+  padding-top: 4px;
+  font-feature-settings: "lnum";
+}
+.q-num small {
+  font-style: normal;
+  font-family: 'SUIT Variable', sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  font-weight: var(--w-medium);
+  display: block;
+  margin-bottom: 2px;
+}
+.q-label {
+  font-size: calc(var(--fs-h3) * var(--scale));
+  letter-spacing: var(--ls-h3);
+  font-weight: var(--w-medium);
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0;
+  text-wrap: pretty;
+}
+.q-required {
+  display: inline-block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gilt);
+  font-size: 0.85em;
+  margin-left: 6px;
+  vertical-align: 4px;
+  letter-spacing: 0;
+}
+.q-hint {
+  font-size: calc(var(--fs-small) * var(--scale));
+  letter-spacing: var(--ls-small);
+  color: var(--ink-3);
+  line-height: 1.7;
+  margin: 6px 0 24px 76px;
+  white-space: pre-line;
+  font-weight: var(--w-light);
+  position: relative;
+}
+.q-hint::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: 0.7em;
+  width: 6px;
+  height: 1px;
+  background: var(--gilt);
+}
+@media (max-width: 600px) {
+  .q-head { grid-template-columns: 1fr; gap: 4px; }
+  .q-hint { margin-left: 0; }
+  .q-hint::before { display: none; }
+}
+
+.q-body { padding-left: 76px; }
+@media (max-width: 600px) {
+  .q-body { padding-left: 0; }
+}
+
+/* ---------- Inputs ---------- */
+.field {
+  position: relative;
+}
+.input,
+.textarea {
+  width: 100%;
+  font: inherit;
+  font-size: calc(var(--fs-body-l) * var(--scale));
+  letter-spacing: var(--ls-body-l);
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--hairline-2);
+  padding: 14px 0 12px;
+  outline: none;
+  resize: none;
+  transition: border-color 240ms ease;
+  font-weight: var(--w-regular);
+}
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--ink-5);
+  font-weight: var(--w-light);
+  font-style: italic;
+}
+.textarea {
+  line-height: 1.75;
+  padding: 16px 0;
+}
+.input:hover,
+.textarea:hover { border-bottom-color: var(--ink-4); }
+
+.field::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  height: 1px;
+  width: 0%;
+  background: var(--accent);
+  transition: width 380ms cubic-bezier(.2,.7,.2,1);
+}
+.field.is-focused::after { width: 100%; }
+.field.is-focused .input,
+.field.is-focused .textarea { border-bottom-color: transparent; }
+
+.char-count {
+  position: absolute;
+  right: 0;
+  bottom: -22px;
+  font-size: calc(var(--fs-caption) * var(--scale));
+  letter-spacing: var(--ls-caption);
+  color: var(--ink-4);
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ---------- Identity (Q01) — atelier card ---------- */
+.identity-card {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  padding: 32px 36px 28px;
+  position: relative;
+}
+.identity-card::before,
+.identity-card::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--rule);
+}
+.identity-card::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+.identity-card::after  { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+.identity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 36px;
+}
+.identity-grid .role-row { grid-column: 1 / -1; }
+.sub-label {
+  font-size: calc(var(--fs-eyebrow) * var(--scale));
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-4);
+  font-weight: var(--w-medium);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sub-label .serif {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--gilt);
+}
+@media (max-width: 600px) {
+  .identity-card { padding: 24px 20px; }
+  .identity-grid { grid-template-columns: 1fr; gap: 22px; }
+}
+
+/* ---------- Role segmented selector (refined) ---------- */
+.segmented {
+  display: inline-flex;
+  position: relative;
+  background: var(--paper-2);
+  border: 1px solid var(--hairline);
+  padding: 4px;
+  border-radius: 999px;
+  gap: 0;
+}
+.segmented input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.segmented label {
+  position: relative;
+  z-index: 2;
+  padding: 10px 30px;
+  white-space: nowrap;
+  word-break: keep-all;
+  font-size: calc(var(--fs-body) * var(--scale));
+  letter-spacing: var(--ls-body);
+  color: var(--ink-3);
+  cursor: pointer;
+  transition: color 220ms ease;
+  border-radius: 999px;
+  font-weight: var(--w-regular);
+  user-select: none;
+}
+.segmented label:hover { color: var(--ink-2); }
+.segmented input:checked + label { color: var(--paper); font-weight: var(--w-medium); }
+.segmented .thumb {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  background: var(--accent);
+  border-radius: 999px;
+  transition: transform 360ms cubic-bezier(.34,1.2,.45,1);
+  z-index: 1;
+  box-shadow: 0 6px 18px -8px rgba(20, 40, 34, 0.6);
+}
+.segmented[data-value="실장"] .thumb { transform: translateX(100%); }
+@media (max-width: 380px) {
+  .segmented label { padding: 10px 22px; }
+}
+
+/* ---------- Q14 price comparison ---------- */
+.price-table-wrap { margin-top: 8px; }
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.price-table thead th {
+  font-size: calc(var(--fs-eyebrow) * var(--scale));
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: var(--w-medium);
+  padding: 18px 10px;
+  text-align: center;
+  border-bottom: 1px solid var(--rule);
+  border-top: 1px solid var(--rule);
+  vertical-align: middle;
+  background: var(--paper-2);
+}
+.price-table thead th:first-child {
+  text-align: left;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.price-table tbody td {
+  padding: 18px 10px;
+  border-bottom: 1px solid var(--hairline);
+  vertical-align: middle;
+  text-align: center;
+}
+.price-table tbody tr:hover { background: rgba(31, 58, 48, 0.02); }
+.price-table tbody td:first-child {
+  text-align: left;
+  font-weight: var(--w-medium);
+  color: var(--ink);
+  font-size: calc(var(--fs-body) * var(--scale));
+  letter-spacing: var(--ls-body);
+  width: 28%;
+}
+.price-table tbody td:first-child::before {
+  content: attr(data-num);
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink-4);
+  margin-right: 12px;
+  font-size: 13px;
+}
+.price-table tbody td:last-child { width: 24%; }
+
+.cell-radio {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.cell-radio input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+  margin: 0;
+}
+.cell-radio-dot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid var(--hairline-2);
+  background: var(--card);
+  position: relative;
+  transition: all 200ms ease;
+}
+.cell-radio-dot::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: scale(0);
+  transition: transform 240ms cubic-bezier(.34,1.2,.45,1);
+}
+.cell-radio:hover .cell-radio-dot { border-color: var(--ink-3); }
+.cell-radio input:checked + .cell-radio-dot {
+  border-color: var(--accent);
+}
+.cell-radio input:checked + .cell-radio-dot::after { transform: scale(1); }
+
+.cell-note {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  font: inherit;
+  font-size: calc(var(--fs-small) * var(--scale));
+  letter-spacing: var(--ls-small);
+  color: var(--ink-2);
+  padding: 6px 0;
+  outline: none;
+  text-align: left;
+  transition: border-color 180ms ease;
+}
+.cell-note::placeholder {
+  color: var(--ink-5);
+  font-weight: var(--w-light);
+  font-style: italic;
+  font-size: 12px;
+}
+.cell-note:focus { border-bottom-color: var(--accent); }
+.cell-note:hover { border-bottom-color: var(--hairline-2); }
+
+/* Mobile price cards */
+.price-cards { display: none; }
+@media (max-width: 720px) {
+  .price-table-wrap { display: none; }
+  .price-cards { display: block; }
+  .price-card {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--hairline);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 18px 14px;
+    align-items: baseline;
+  }
+  .price-card:first-child { border-top: 1px solid var(--rule); }
+  .price-card-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gilt);
+    font-size: 14px;
+  }
+  .price-card-name {
+    font-size: calc(var(--fs-title) * var(--scale));
+    letter-spacing: var(--ls-title);
+    font-weight: var(--w-medium);
+    color: var(--ink);
+  }
+  .price-card-body { grid-column: 2; }
+  .price-card-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .price-card-option { position: relative; }
+  .price-card-option input {
+    position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer;
+  }
+  .price-card-chip {
+    padding: 11px 14px;
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    text-align: center;
+    font-size: calc(var(--fs-small) * var(--scale));
+    letter-spacing: var(--ls-small);
+    color: var(--ink-2);
+    transition: all 200ms ease;
+    cursor: pointer;
+    border-radius: 1px;
+  }
+  .price-card-option input:checked + .price-card-chip {
+    background: var(--accent);
+    color: var(--paper);
+    border-color: var(--accent);
+  }
+  .price-card-note-label {
+    font-size: calc(var(--fs-eyebrow) * var(--scale));
+    letter-spacing: var(--ls-eyebrow);
+    color: var(--ink-4);
+    text-transform: uppercase;
+    font-weight: var(--w-medium);
+    display: block;
+    margin-bottom: 6px;
+  }
+}
+
+/* ---------- Submit ---------- */
+.submit-area {
+  padding: clamp(64px, 9vw, 112px) 0 clamp(80px, 10vw, 120px);
+  text-align: center;
+  border-top: 1px solid var(--hairline);
+  position: relative;
+}
+.submit-ornament {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gilt);
+  font-size: 28px;
+  margin-bottom: 28px;
+  line-height: 1;
+}
+.submit-eyebrow {
+  font-size: calc(var(--fs-eyebrow) * var(--scale));
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: var(--w-medium);
+  margin-bottom: 16px;
+}
+.submit-headline {
+  font-size: calc(var(--fs-h2) * var(--scale));
+  letter-spacing: var(--ls-h2);
+  font-weight: var(--w-light);
+  color: var(--ink);
+  margin: 0 auto 28px;
+  max-width: 28ch;
+  line-height: 1.4;
+}
+.submit-summary {
+  font-size: calc(var(--fs-caption) * var(--scale));
+  letter-spacing: var(--ls-caption);
+  color: var(--ink-3);
+  margin-bottom: 36px;
+  font-feature-settings: "tnum";
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 18px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: var(--card);
+}
+.submit-summary .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--ink-4);
+  transition: background 200ms ease;
+}
+.submit-summary.complete .dot { background: var(--accent); }
+.submit-summary strong {
+  font-weight: var(--w-medium);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+.btn-submit {
+  font: inherit;
+  font-size: calc(var(--fs-body-l) * var(--scale));
+  letter-spacing: 0.05em;
+  font-weight: var(--w-medium);
+  color: var(--paper);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 20px 64px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 280ms cubic-bezier(.2,.7,.2,1);
+  position: relative;
+  overflow: hidden;
+  min-width: 300px;
+}
+.btn-submit:hover:not(:disabled) {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px -16px rgba(20, 40, 34, 0.55);
+}
+.btn-submit:disabled {
+  background: transparent;
+  color: var(--ink-4);
+  border-color: var(--hairline-2);
+  cursor: not-allowed;
+}
+.btn-arrow {
+  display: inline-block;
+  margin-left: 16px;
+  transition: transform 280ms cubic-bezier(.2,.7,.2,1);
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+}
+.btn-submit:hover:not(:disabled) .btn-arrow { transform: translateX(6px); }
+
+/* ---------- Footer ---------- */
+.foot {
+  border-top: 1px solid var(--rule);
+  padding: 48px 0 72px;
+  background: var(--paper-2);
+}
+.foot-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: flex-end;
+}
+.foot-left {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: calc(var(--fs-small) * var(--scale));
+  letter-spacing: var(--ls-small);
+  color: var(--ink-3);
+  line-height: 1.7;
+  font-weight: var(--w-light);
+}
+.foot-left svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--gilt);
+}
+.foot-note { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.foot-line { display: block; white-space: nowrap; }
+@media (max-width: 640px) {
+  .foot-line { white-space: normal; }
+}
+.foot-right {
+  text-align: right;
+}
+.foot-mark {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 28px;
+  color: var(--ink-2);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.foot-copy {
+  font-size: calc(var(--fs-caption) * var(--scale));
+  letter-spacing: var(--ls-caption);
+  color: var(--ink-4);
+  font-weight: var(--w-light);
+}
+@media (max-width: 640px) {
+  .foot-inner { grid-template-columns: 1fr; gap: 28px; }
+  .foot-right { text-align: left; }
+}
+
+/* ---------- Entrance ---------- */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.section { animation: rise 700ms cubic-bezier(.2,.7,.2,1) both; }
+
+  </style>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+
+// tweaks-panel.jsx
+// Reusable Tweaks shell + form-control helpers.
+//
+// Owns the host protocol (listens for __activate_edit_mode / __deactivate_edit_mode,
+// posts __edit_mode_available / __edit_mode_set_keys / __edit_mode_dismissed) so
+// individual prototypes don't re-roll it. Ships a consistent set of controls so you
+// don't hand-draw <input type="range">, segmented radios, steppers, etc.
+//
+// Usage (in an HTML file that loads React + Babel):
+//
+//   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+//     "primaryColor": "#D97757",
+//     "palette": ["#D97757", "#29261b", "#f6f4ef"],
+//     "fontSize": 16,
+//     "density": "regular",
+//     "dark": false
+//   }/*EDITMODE-END*/;
+//
+//   function App() {
+//     const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+//     return (
+//       <div style={{ fontSize: t.fontSize, color: t.primaryColor }}>
+//         Hello
+//         <TweaksPanel>
+//           <TweakSection label="Typography" />
+//           <TweakSlider label="Font size" value={t.fontSize} min={10} max={32} unit="px"
+//                        onChange={(v) => setTweak('fontSize', v)} />
+//           <TweakRadio  label="Density" value={t.density}
+//                        options={['compact', 'regular', 'comfy']}
+//                        onChange={(v) => setTweak('density', v)} />
+//           <TweakSection label="Theme" />
+//           <TweakColor  label="Primary" value={t.primaryColor}
+//                        options={['#D97757', '#2A6FDB', '#1F8A5B', '#7A5AE0']}
+//                        onChange={(v) => setTweak('primaryColor', v)} />
+//           <TweakColor  label="Palette" value={t.palette}
+//                        options={[['#D97757', '#29261b', '#f6f4ef'],
+//                                  ['#475569', '#0f172a', '#f1f5f9']]}
+//                        onChange={(v) => setTweak('palette', v)} />
+//           <TweakToggle label="Dark mode" value={t.dark}
+//                        onChange={(v) => setTweak('dark', v)} />
+//         </TweaksPanel>
+//       </div>
+//     );
+//   }
+//
+// ─────────────────────────────────────────────────────────────────────────────
+
+const __TWEAKS_STYLE = `
+  .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
+    max-height:calc(100vh - 32px);display:flex;flex-direction:column;
+    transform:scale(var(--dc-inv-zoom,1));transform-origin:bottom right;
+    background:rgba(250,249,247,.78);color:#29261b;
+    -webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
+    border:.5px solid rgba(255,255,255,.6);border-radius:14px;
+    box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 40px rgba(0,0,0,.18);
+    font:11.5px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;overflow:hidden}
+  .twk-hd{display:flex;align-items:center;justify-content:space-between;
+    padding:10px 8px 10px 14px;cursor:move;user-select:none}
+  .twk-hd b{font-size:12px;font-weight:600;letter-spacing:.01em}
+  .twk-x{appearance:none;border:0;background:transparent;color:rgba(41,38,27,.55);
+    width:22px;height:22px;border-radius:6px;cursor:default;font-size:13px;line-height:1}
+  .twk-x:hover{background:rgba(0,0,0,.06);color:#29261b}
+  .twk-body{padding:2px 14px 14px;display:flex;flex-direction:column;gap:10px;
+    overflow-y:auto;overflow-x:hidden;min-height:0;
+    scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.15) transparent}
+  .twk-body::-webkit-scrollbar{width:8px}
+  .twk-body::-webkit-scrollbar-track{background:transparent;margin:2px}
+  .twk-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:4px;
+    border:2px solid transparent;background-clip:content-box}
+  .twk-body::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,.25);
+    border:2px solid transparent;background-clip:content-box}
+  .twk-row{display:flex;flex-direction:column;gap:5px}
+  .twk-row-h{flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
+  .twk-lbl{display:flex;justify-content:space-between;align-items:baseline;
+    color:rgba(41,38,27,.72)}
+  .twk-lbl>span:first-child{font-weight:500}
+  .twk-val{color:rgba(41,38,27,.5);font-variant-numeric:tabular-nums}
+
+  .twk-sect{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(41,38,27,.45);padding:10px 0 0}
+  .twk-sect:first-child{padding-top:0}
+
+  .twk-field{appearance:none;width:100%;height:26px;padding:0 8px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:7px;
+    background:rgba(255,255,255,.6);color:inherit;font:inherit;outline:none}
+  .twk-field:focus{border-color:rgba(0,0,0,.25);background:rgba(255,255,255,.85)}
+  select.twk-field{padding-right:22px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(0,0,0,.5)' d='M0 0h10L5 6z'/></svg>");
+    background-repeat:no-repeat;background-position:right 8px center}
+
+  .twk-slider{appearance:none;-webkit-appearance:none;width:100%;height:4px;margin:6px 0;
+    border-radius:999px;background:rgba(0,0,0,.12);outline:none}
+  .twk-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
+    width:14px;height:14px;border-radius:50%;background:#fff;
+    border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
+  .twk-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;
+    background:#fff;border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
+
+  .twk-seg{position:relative;display:flex;padding:2px;border-radius:8px;
+    background:rgba(0,0,0,.06);user-select:none}
+  .twk-seg-thumb{position:absolute;top:2px;bottom:2px;border-radius:6px;
+    background:rgba(255,255,255,.9);box-shadow:0 1px 2px rgba(0,0,0,.12);
+    transition:left .15s cubic-bezier(.3,.7,.4,1),width .15s}
+  .twk-seg.dragging .twk-seg-thumb{transition:none}
+  .twk-seg button{appearance:none;position:relative;z-index:1;flex:1;border:0;
+    background:transparent;color:inherit;font:inherit;font-weight:500;min-height:22px;
+    border-radius:6px;cursor:default;padding:4px 6px;line-height:1.2;
+    overflow-wrap:anywhere}
+
+  .twk-toggle{position:relative;width:32px;height:18px;border:0;border-radius:999px;
+    background:rgba(0,0,0,.15);transition:background .15s;cursor:default;padding:0}
+  .twk-toggle[data-on="1"]{background:#34c759}
+  .twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;
+    background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
+  .twk-toggle[data-on="1"] i{transform:translateX(14px)}
+
+  .twk-num{display:flex;align-items:center;height:26px;padding:0 0 0 8px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:7px;background:rgba(255,255,255,.6)}
+  .twk-num-lbl{font-weight:500;color:rgba(41,38,27,.6);cursor:ew-resize;
+    user-select:none;padding-right:8px}
+  .twk-num input{flex:1;min-width:0;height:100%;border:0;background:transparent;
+    font:inherit;font-variant-numeric:tabular-nums;text-align:right;padding:0 8px 0 0;
+    outline:none;color:inherit;-moz-appearance:textfield}
+  .twk-num input::-webkit-inner-spin-button,.twk-num input::-webkit-outer-spin-button{
+    -webkit-appearance:none;margin:0}
+  .twk-num-unit{padding-right:8px;color:rgba(41,38,27,.45)}
+
+  .twk-btn{appearance:none;height:26px;padding:0 12px;border:0;border-radius:7px;
+    background:rgba(0,0,0,.78);color:#fff;font:inherit;font-weight:500;cursor:default}
+  .twk-btn:hover{background:rgba(0,0,0,.88)}
+  .twk-btn.secondary{background:rgba(0,0,0,.06);color:inherit}
+  .twk-btn.secondary:hover{background:rgba(0,0,0,.1)}
+
+  .twk-swatch{appearance:none;-webkit-appearance:none;width:56px;height:22px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:6px;padding:0;cursor:default;
+    background:transparent;flex-shrink:0}
+  .twk-swatch::-webkit-color-swatch-wrapper{padding:0}
+  .twk-swatch::-webkit-color-swatch{border:0;border-radius:5.5px}
+  .twk-swatch::-moz-color-swatch{border:0;border-radius:5.5px}
+
+  .twk-chips{display:flex;gap:6px}
+  .twk-chip{position:relative;appearance:none;flex:1;min-width:0;height:46px;
+    padding:0;border:0;border-radius:6px;overflow:hidden;cursor:default;
+    box-shadow:0 0 0 .5px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.06);
+    transition:transform .12s cubic-bezier(.3,.7,.4,1),box-shadow .12s}
+  .twk-chip:hover{transform:translateY(-1px);
+    box-shadow:0 0 0 .5px rgba(0,0,0,.18),0 4px 10px rgba(0,0,0,.12)}
+  .twk-chip[data-on="1"]{box-shadow:0 0 0 1.5px rgba(0,0,0,.85),
+    0 2px 6px rgba(0,0,0,.15)}
+  .twk-chip>span{position:absolute;top:0;bottom:0;right:0;width:34%;
+    display:flex;flex-direction:column;box-shadow:-1px 0 0 rgba(0,0,0,.1)}
+  .twk-chip>span>i{flex:1;box-shadow:0 -1px 0 rgba(0,0,0,.1)}
+  .twk-chip>span>i:first-child{box-shadow:none}
+  .twk-chip svg{position:absolute;top:6px;left:6px;width:13px;height:13px;
+    filter:drop-shadow(0 1px 1px rgba(0,0,0,.3))}
+`;
+
+// ── useTweaks ───────────────────────────────────────────────────────────────
+// Single source of truth for tweak values. setTweak persists via the host
+// (__edit_mode_set_keys → host rewrites the EDITMODE block on disk).
+function useTweaks(defaults) {
+  const [values, setValues] = React.useState(defaults);
+  // Accepts either setTweak('key', value) or setTweak({ key: value, ... }) so a
+  // useState-style call doesn't write a "[object Object]" key into the persisted
+  // JSON block.
+  const setTweak = React.useCallback((keyOrEdits, val) => {
+    const edits = typeof keyOrEdits === 'object' && keyOrEdits !== null
+      ? keyOrEdits : { [keyOrEdits]: val };
+    setValues((prev) => ({ ...prev, ...edits }));
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits }, '*');
+    // Same-window signal so in-page listeners (deck-stage rail thumbnails)
+    // can react — the parent message only reaches the host, not peers.
+    window.dispatchEvent(new CustomEvent('tweakchange', { detail: edits }));
+  }, []);
+  return [values, setTweak];
+}
+
+// ── TweaksPanel ─────────────────────────────────────────────────────────────
+// Floating shell. Registers the protocol listener BEFORE announcing
+// availability — if the announce ran first, the host's activate could land
+// before our handler exists and the toolbar toggle would silently no-op.
+// The close button posts __edit_mode_dismissed so the host's toolbar toggle
+// flips off in lockstep; the host echoes __deactivate_edit_mode back which
+// is what actually hides the panel.
+function TweaksPanel({ title = 'Tweaks', noDeckControls = false, children }) {
+  const [open, setOpen] = React.useState(false);
+  const dragRef = React.useRef(null);
+  // Auto-inject a rail toggle when a <deck-stage> is on the page. The
+  // toggle drives the deck's per-viewer _railVisible via window message;
+  // state is mirrored from the same localStorage key the deck reads so
+  // the control reflects reality across reloads. The mechanism is the
+  // message — authors who want custom placement can post it directly
+  // and pass noDeckControls to suppress this one.
+  const hasDeckStage = React.useMemo(
+    () => typeof document !== 'undefined' && !!document.querySelector('deck-stage'),
+    [],
+  );
+  // Hide the toggle until the host has actually enabled the rail (the
+  // __omelette_rail_enabled window message, posted only when the
+  // omelette_deck_rail_enabled flag is on for this user). The initial read
+  // covers TweaksPanel mounting after the message already arrived; the
+  // listener covers the common case of mounting first.
+  const [railEnabled, setRailEnabled] = React.useState(
+    () => hasDeckStage && !!document.querySelector('deck-stage')?._railEnabled,
+  );
+  React.useEffect(() => {
+    if (!hasDeckStage || railEnabled) return undefined;
+    const onMsg = (e) => {
+      if (e.data && e.data.type === '__omelette_rail_enabled') setRailEnabled(true);
+    };
+    window.addEventListener('message', onMsg);
+    return () => window.removeEventListener('message', onMsg);
+  }, [hasDeckStage, railEnabled]);
+  const [railVisible, setRailVisible] = React.useState(() => {
+    try { return localStorage.getItem('deck-stage.railVisible') !== '0'; } catch (e) { return true; }
+  });
+  const toggleRail = (on) => {
+    setRailVisible(on);
+    window.postMessage({ type: '__deck_rail_visible', on }, '*');
+  };
+  const offsetRef = React.useRef({ x: 16, y: 16 });
+  const PAD = 16;
+
+  const clampToViewport = React.useCallback(() => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const w = panel.offsetWidth, h = panel.offsetHeight;
+    const maxRight = Math.max(PAD, window.innerWidth - w - PAD);
+    const maxBottom = Math.max(PAD, window.innerHeight - h - PAD);
+    offsetRef.current = {
+      x: Math.min(maxRight, Math.max(PAD, offsetRef.current.x)),
+      y: Math.min(maxBottom, Math.max(PAD, offsetRef.current.y)),
+    };
+    panel.style.right = offsetRef.current.x + 'px';
+    panel.style.bottom = offsetRef.current.y + 'px';
+  }, []);
+
+  React.useEffect(() => {
+    if (!open) return;
+    clampToViewport();
+    if (typeof ResizeObserver === 'undefined') {
+      window.addEventListener('resize', clampToViewport);
+      return () => window.removeEventListener('resize', clampToViewport);
+    }
+    const ro = new ResizeObserver(clampToViewport);
+    ro.observe(document.documentElement);
+    return () => ro.disconnect();
+  }, [open, clampToViewport]);
+
+  React.useEffect(() => {
+    const onMsg = (e) => {
+      const t = e?.data?.type;
+      if (t === '__activate_edit_mode') setOpen(true);
+      else if (t === '__deactivate_edit_mode') setOpen(false);
+    };
+    window.addEventListener('message', onMsg);
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    return () => window.removeEventListener('message', onMsg);
+  }, []);
+
+  const dismiss = () => {
+    setOpen(false);
+    window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
+  };
+
+  const onDragStart = (e) => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const r = panel.getBoundingClientRect();
+    const sx = e.clientX, sy = e.clientY;
+    const startRight = window.innerWidth - r.right;
+    const startBottom = window.innerHeight - r.bottom;
+    const move = (ev) => {
+      offsetRef.current = {
+        x: startRight - (ev.clientX - sx),
+        y: startBottom - (ev.clientY - sy),
+      };
+      clampToViewport();
+    };
+    const up = () => {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseup', up);
+    };
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
+  };
+
+  if (!open) return null;
+  return (
+    <>
+      <style>{__TWEAKS_STYLE}</style>
+      <div ref={dragRef} className="twk-panel" data-noncommentable=""
+           style={{ right: offsetRef.current.x, bottom: offsetRef.current.y }}>
+        <div className="twk-hd" onMouseDown={onDragStart}>
+          <b>{title}</b>
+          <button className="twk-x" aria-label="Close tweaks"
+                  onMouseDown={(e) => e.stopPropagation()}
+                  onClick={dismiss}>✕</button>
+        </div>
+        <div className="twk-body">
+          {children}
+          {hasDeckStage && railEnabled && !noDeckControls && (
+            <TweakSection label="Deck">
+              <TweakToggle label="Thumbnail rail" value={railVisible} onChange={toggleRail} />
+            </TweakSection>
+          )}
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ── Layout helpers ──────────────────────────────────────────────────────────
+
+function TweakSection({ label, children }) {
+  return (
+    <>
+      <div className="twk-sect">{label}</div>
+      {children}
+    </>
+  );
+}
+
+function TweakRow({ label, value, children, inline = false }) {
+  return (
+    <div className={inline ? 'twk-row twk-row-h' : 'twk-row'}>
+      <div className="twk-lbl">
+        <span>{label}</span>
+        {value != null && <span className="twk-val">{value}</span>}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+// ── Controls ────────────────────────────────────────────────────────────────
+
+function TweakSlider({ label, value, min = 0, max = 100, step = 1, unit = '', onChange }) {
+  return (
+    <TweakRow label={label} value={`${value}${unit}`}>
+      <input type="range" className="twk-slider" min={min} max={max} step={step}
+             value={value} onChange={(e) => onChange(Number(e.target.value))} />
+    </TweakRow>
+  );
+}
+
+function TweakToggle({ label, value, onChange }) {
+  return (
+    <div className="twk-row twk-row-h">
+      <div className="twk-lbl"><span>{label}</span></div>
+      <button type="button" className="twk-toggle" data-on={value ? '1' : '0'}
+              role="switch" aria-checked={!!value}
+              onClick={() => onChange(!value)}><i /></button>
+    </div>
+  );
+}
+
+function TweakRadio({ label, value, options, onChange }) {
+  const trackRef = React.useRef(null);
+  const [dragging, setDragging] = React.useState(false);
+  // The active value is read by pointer-move handlers attached for the lifetime
+  // of a drag — ref it so a stale closure doesn't fire onChange for every move.
+  const valueRef = React.useRef(value);
+  valueRef.current = value;
+
+  // Segments wrap mid-word once per-segment width runs out. The track is
+  // ~248px (280 panel − 28 body pad − 4 seg pad), each button loses 12px
+  // to its own padding, and 11.5px system-ui averages ~6.3px/char — so 2
+  // options fit ~16 chars each, 3 fit ~10. Past that (or >3 options), fall
+  // back to a dropdown rather than wrap.
+  const labelLen = (o) => String(typeof o === 'object' ? o.label : o).length;
+  const maxLen = options.reduce((m, o) => Math.max(m, labelLen(o)), 0);
+  const fitsAsSegments = maxLen <= ({ 2: 16, 3: 10 }[options.length] ?? 0);
+  if (!fitsAsSegments) {
+    // <select> emits strings — map back to the original option value so the
+    // fallback stays type-preserving (numbers, booleans) like the segment path.
+    const resolve = (s) => {
+      const m = options.find((o) => String(typeof o === 'object' ? o.value : o) === s);
+      return m === undefined ? s : typeof m === 'object' ? m.value : m;
+    };
+    return <TweakSelect label={label} value={value} options={options}
+                        onChange={(s) => onChange(resolve(s))} />;
+  }
+  const opts = options.map((o) => (typeof o === 'object' ? o : { value: o, label: o }));
+  const idx = Math.max(0, opts.findIndex((o) => o.value === value));
+  const n = opts.length;
+
+  const segAt = (clientX) => {
+    const r = trackRef.current.getBoundingClientRect();
+    const inner = r.width - 4;
+    const i = Math.floor(((clientX - r.left - 2) / inner) * n);
+    return opts[Math.max(0, Math.min(n - 1, i))].value;
+  };
+
+  const onPointerDown = (e) => {
+    setDragging(true);
+    const v0 = segAt(e.clientX);
+    if (v0 !== valueRef.current) onChange(v0);
+    const move = (ev) => {
+      if (!trackRef.current) return;
+      const v = segAt(ev.clientX);
+      if (v !== valueRef.current) onChange(v);
+    };
+    const up = () => {
+      setDragging(false);
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  };
+
+  return (
+    <TweakRow label={label}>
+      <div ref={trackRef} role="radiogroup" onPointerDown={onPointerDown}
+           className={dragging ? 'twk-seg dragging' : 'twk-seg'}>
+        <div className="twk-seg-thumb"
+             style={{ left: `calc(2px + ${idx} * (100% - 4px) / ${n})`,
+                      width: `calc((100% - 4px) / ${n})` }} />
+        {opts.map((o) => (
+          <button key={o.value} type="button" role="radio" aria-checked={o.value === value}>
+            {o.label}
+          </button>
+        ))}
+      </div>
+    </TweakRow>
+  );
+}
+
+function TweakSelect({ label, value, options, onChange }) {
+  return (
+    <TweakRow label={label}>
+      <select className="twk-field" value={value} onChange={(e) => onChange(e.target.value)}>
+        {options.map((o) => {
+          const v = typeof o === 'object' ? o.value : o;
+          const l = typeof o === 'object' ? o.label : o;
+          return <option key={v} value={v}>{l}</option>;
+        })}
+      </select>
+    </TweakRow>
+  );
+}
+
+function TweakText({ label, value, placeholder, onChange }) {
+  return (
+    <TweakRow label={label}>
+      <input className="twk-field" type="text" value={value} placeholder={placeholder}
+             onChange={(e) => onChange(e.target.value)} />
+    </TweakRow>
+  );
+}
+
+function TweakNumber({ label, value, min, max, step = 1, unit = '', onChange }) {
+  const clamp = (n) => {
+    if (min != null && n < min) return min;
+    if (max != null && n > max) return max;
+    return n;
+  };
+  const startRef = React.useRef({ x: 0, val: 0 });
+  const onScrubStart = (e) => {
+    e.preventDefault();
+    startRef.current = { x: e.clientX, val: value };
+    const decimals = (String(step).split('.')[1] || '').length;
+    const move = (ev) => {
+      const dx = ev.clientX - startRef.current.x;
+      const raw = startRef.current.val + dx * step;
+      const snapped = Math.round(raw / step) * step;
+      onChange(clamp(Number(snapped.toFixed(decimals))));
+    };
+    const up = () => {
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  };
+  return (
+    <div className="twk-num">
+      <span className="twk-num-lbl" onPointerDown={onScrubStart}>{label}</span>
+      <input type="number" value={value} min={min} max={max} step={step}
+             onChange={(e) => onChange(clamp(Number(e.target.value)))} />
+      {unit && <span className="twk-num-unit">{unit}</span>}
+    </div>
+  );
+}
+
+// Relative-luminance contrast pick — checkmarks drawn over a swatch need to
+// read on both #111 and #fafafa without per-option configuration. Hex input
+// only (#rgb / #rrggbb); named or rgb()/hsl() colors fall through to "light".
+function __twkIsLight(hex) {
+  const h = String(hex).replace('#', '');
+  const x = h.length === 3 ? h.replace(/./g, (c) => c + c) : h.padEnd(6, '0');
+  const n = parseInt(x.slice(0, 6), 16);
+  if (Number.isNaN(n)) return true;
+  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+  return r * 299 + g * 587 + b * 114 > 148000;
+}
+
+const __TwkCheck = ({ light }) => (
+  <svg viewBox="0 0 14 14" aria-hidden="true">
+    <path d="M3 7.2 5.8 10 11 4.2" fill="none" strokeWidth="2.2"
+          strokeLinecap="round" strokeLinejoin="round"
+          stroke={light ? 'rgba(0,0,0,.78)' : '#fff'} />
+  </svg>
+);
+
+// TweakColor — curated color/palette picker. Each option is either a single
+// hex string or an array of 1-5 hex strings; the card adapts — a lone color
+// renders solid, a palette renders colors[0] as the hero (left ~2/3) with the
+// rest stacked in a sharp column on the right. onChange emits the
+// option in the shape it was passed (string stays string, array stays array).
+// Without options it falls back to the native color input for back-compat.
+function TweakColor({ label, value, options, onChange }) {
+  if (!options || !options.length) {
+    return (
+      <div className="twk-row twk-row-h">
+        <div className="twk-lbl"><span>{label}</span></div>
+        <input type="color" className="twk-swatch" value={value}
+               onChange={(e) => onChange(e.target.value)} />
+      </div>
+    );
+  }
+  // Native <input type=color> emits lowercase hex per the HTML spec, so
+  // compare case-insensitively. String() guards JSON.stringify(undefined),
+  // which returns the primitive undefined (no .toLowerCase).
+  const key = (o) => String(JSON.stringify(o)).toLowerCase();
+  const cur = key(value);
+  return (
+    <TweakRow label={label}>
+      <div className="twk-chips" role="radiogroup">
+        {options.map((o, i) => {
+          const colors = Array.isArray(o) ? o : [o];
+          const [hero, ...rest] = colors;
+          const sup = rest.slice(0, 4);
+          const on = key(o) === cur;
+          return (
+            <button key={i} type="button" className="twk-chip" role="radio"
+                    aria-checked={on} data-on={on ? '1' : '0'}
+                    aria-label={colors.join(', ')} title={colors.join(' · ')}
+                    style={{ background: hero }}
+                    onClick={() => onChange(o)}>
+              {sup.length > 0 && (
+                <span>
+                  {sup.map((c, j) => <i key={j} style={{ background: c }} />)}
+                </span>
+              )}
+              {on && <__TwkCheck light={__twkIsLight(hero)} />}
+            </button>
+          );
+        })}
+      </div>
+    </TweakRow>
+  );
+}
+
+function TweakButton({ label, onClick, secondary = false }) {
+  return (
+    <button type="button" className={secondary ? 'twk-btn secondary' : 'twk-btn'}
+            onClick={onClick}>{label}</button>
+  );
+}
+
+Object.assign(window, {
+  useTweaks, TweaksPanel, TweakSection, TweakRow,
+  TweakSlider, TweakToggle, TweakRadio, TweakSelect,
+  TweakText, TweakNumber, TweakColor, TweakButton,
+});
+
+  </script>
+  <script type="text/babel">
+/* global React, ReactDOM */
+const { useState, useEffect, useRef, useMemo } = React;
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "fontScale": 1,
+  "bodyWeight": 400,
+  "headingWeight": 500
+}/*EDITMODE-END*/;
+
+const SECTIONS = [
+  { id: "I", roman: "I", title: "기본 정보", index: "01",
+    questions: [{ id: "q01", kind: "identity", required: true,
+      label: "귀 의료기관의 정보를 확인합니다." }] },
+  { id: "II", roman: "II", title: "진료 포트폴리오", index: "02",
+    questions: [
+      { id: "q02", kind: "textarea", rows: 6, required: true,
+        label: "귀 의료기관의 주력 시술 및 진료 항목을 알려주세요.",
+        hint: "예: 보톡스, 필러, 피코레이저, 리프팅, 스킨부스터, 제모 등" },
+      { id: "q03", kind: "textarea", rows: 4, required: true,
+        label: "주요 타겟 고객층은 어떻게 되시나요?",
+        hint: "연령대, 성별, 지역, 주요 내원 경로 등" }
+    ] },
+  { id: "III", roman: "III", title: "바이럴 현황", index: "03",
+    questions: [
+      { id: "q04", kind: "text", required: true,
+        label: "보유하고 계신 네이버 블로그 계정명이 어떻게 되시나요?",
+        hint: "블로그 URL 또는 계정명을 적어주세요. 없으시면 ‘없음’이라고 적어주세요.",
+        placeholder: "예: blog.naver.com/hospital-name" },
+      { id: "q05", kind: "textarea", rows: 6, required: true,
+        label: "현재 운영 중인 SNS 계정이나 바이럴 채널의 URL을 알려주세요.",
+        hint: "인스타그램, 유튜브, 네이버 블로그, 카카오 채널 등\n의료기관 계정인지 대행사 계정인지 분류해주시고, 월간 포스팅 건수도 알려주세요." },
+      { id: "q06", kind: "textarea", rows: 4,
+        label: "월간 콘텐츠 발행 빈도와 관리 주체를 알려주세요.",
+        hint: "직접 관리 / 대행사 위탁 / 혼합, 월 몇 건 발행 등" }
+    ] },
+  { id: "IV", roman: "IV", title: "바이럴 목표", index: "04",
+    questions: [
+      { id: "q07", kind: "textarea", rows: 6, required: true,
+        label: "상위 노출을 원하는 키워드를 알려주세요.",
+        hint: "예: 강남피부과, 여드름치료잘하는곳, 피코레이저후기 등 구체적으로 적어주세요." },
+      { id: "q08", kind: "textarea", rows: 4,
+        label: "이상적으로 여기시는 바이럴 광고 대상처(레퍼런스)가 있다면 알려주세요.",
+        hint: "잘하고 있다고 생각하시는 경쟁 병원이나 블로그, 콘텐츠 등" },
+      { id: "q09", kind: "textarea", rows: 6, required: true,
+        label: "현재 바이럴 마케팅에서 가장 어렵거나 불만족스러운 점은 무엇인가요?",
+        hint: "예: 블로그 상위노출 어려움, 콘텐츠 품질, 대행사 커뮤니케이션, 비용 대비 효과 등" }
+    ] },
+  { id: "V", roman: "V", title: "경쟁 & 예산", index: "05",
+    questions: [
+      { id: "q10", kind: "textarea", rows: 4,
+        label: "생각하시는 경쟁 대상 병원은 주로 어떻게 되시나요?",
+        hint: "답변 주신 내용을 제외하고 잠재 경쟁자의 분석이 추가 진행됩니다." },
+      { id: "q11", kind: "text", required: true,
+        label: "월간 마케팅 예산은 어떻게 되시나요?",
+        hint: "바이럴, 광고, 대행사 비용 등 전체 마케팅 예산",
+        placeholder: "예: 월 300만원" },
+      { id: "q12", kind: "textarea", rows: 4,
+        label: "현재 마케팅 대행사를 이용하고 계신가요? 이용 중이라면 만족도는 어떠신가요?" }
+    ] },
+  { id: "VI", roman: "VI", title: "추가 분석", index: "06",
+    questions: [
+      { id: "q13", kind: "textarea", rows: 3,
+        label: "현재 운영 중인 광고 계정(네이버, 메타 등)의 수치나 설정을 직접 살펴볼 수 있다면 더욱 정밀한 분석과 전략 제안이 가능합니다. 혹시 조회 권한 부여가 가능한지 확인해 주세요.",
+        hint: "어려우시다면 ‘불가’라고 적어주세요." },
+      { id: "q14", kind: "price-table",
+        label: "귀 의료기관의 시술 가격은 경쟁 의료기관 대비 어떤 수준인가요?",
+        sub: "특정 시술에서 가격 차이가 큰 항목이 있다면 적어주세요." }
+    ] }
+];
+
+const PROCEDURES = [
+  "보톡스",
+  "필러",
+  "피코레이저(토닝/프락셀)",
+  "스킨부스터(리쥬란/쥬베룩)",
+  "리프팅(울쎄라/써마지)",
+  "슈링크/인모드",
+  "레이저 제모",
+  "여드름/흉터 치료",
+  "실리프팅",
+  "미백/색소 치료"
+];
+const PRICE_LEVELS = [
+  { id: "high", label: "매우높음" },
+  { id: "avg",  label: "평균수준" },
+  { id: "low",  label: "매우낮음" },
+  { id: "unk",  label: "모름" }
+];
+
+const REQUIRED = SECTIONS.flatMap(s =>
+  s.questions.filter(q => q.required).map(q => q.id)
+);
+
+function TextInput({ value, onChange, placeholder, type = "text" }) {
+  const [focused, setFocused] = useState(false);
+  return (
+    <div className={"field" + (focused ? " is-focused" : "")}>
+      <input
+        className="input"
+        type={type}
+        value={value || ""}
+        placeholder={placeholder}
+        onChange={e => onChange(e.target.value)}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+      />
+    </div>
+  );
+}
+
+function TextArea({ value, onChange, placeholder, rows = 4, maxLength = 1000 }) {
+  const [focused, setFocused] = useState(false);
+  const len = (value || "").length;
+  return (
+    <div className={"field" + (focused ? " is-focused" : "")}>
+      <textarea
+        className="textarea"
+        rows={rows}
+        value={value || ""}
+        placeholder={placeholder}
+        maxLength={maxLength}
+        onChange={e => onChange(e.target.value)}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+      />
+      {focused && (
+        <span className="char-count">{len} / {maxLength}</span>
+      )}
+    </div>
+  );
+}
+
+/* Refined segmented role selector with sliding indicator */
+function RoleSegmented({ value, onChange }) {
+  return (
+    <div className="segmented" data-value={value || "원장"}>
+      <span className="thumb" aria-hidden="true"></span>
+      {["원장", "실장"].map(opt => (
+        <React.Fragment key={opt}>
+          <input
+            id={"role-" + opt}
+            type="radio"
+            name="role"
+            value={opt}
+            checked={value === opt}
+            onChange={() => onChange(opt)}
+          />
+          <label htmlFor={"role-" + opt}>{opt}</label>
+        </React.Fragment>
+      ))}
+    </div>
+  );
+}
+
+function IdentityField({ value, onChange }) {
+  const v = value || { hospital: "", role: "원장", name: "" };
+  const set = (k, x) => onChange({ ...v, [k]: x });
+  return (
+    <div className="identity-card">
+      <div className="identity-grid">
+        <div>
+          <span className="sub-label">병원명 <span className="serif">Clinic</span></span>
+          <TextInput
+            value={v.hospital}
+            onChange={x => set("hospital", x)}
+            placeholder="병원명을 입력해 주세요"
+          />
+        </div>
+        <div>
+          <span className="sub-label">응답자 성명 <span className="serif">Respondent</span></span>
+          <TextInput
+            value={v.name}
+            onChange={x => set("name", x)}
+            placeholder="성명을 입력해 주세요"
+          />
+        </div>
+        <div className="role-row">
+          <span className="sub-label">직급 <span className="serif">Title</span></span>
+          <RoleSegmented value={v.role} onChange={x => set("role", x)} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PriceTable({ value, onChange }) {
+  const v = value || {};
+  const setLevel = (proc, level) => onChange({ ...v, [proc]: { ...(v[proc] || {}), level } });
+  const setNote  = (proc, note)  => onChange({ ...v, [proc]: { ...(v[proc] || {}), note } });
+
+  return (
+    <React.Fragment>
+      <div className="price-table-wrap">
+        <table className="price-table">
+          <thead>
+            <tr>
+              <th>Procedures</th>
+              {PRICE_LEVELS.map(l => <th key={l.id}>{l.label}</th>)}
+              <th>비고 · 특이사항</th>
+            </tr>
+          </thead>
+          <tbody>
+            {PROCEDURES.map((p, i) => (
+              <tr key={p}>
+                <td data-num={String(i+1).padStart(2,'0')}>{p}</td>
+                {PRICE_LEVELS.map(l => (
+                  <td key={l.id}>
+                    <label className="cell-radio">
+                      <input
+                        type="radio"
+                        name={"price-" + p}
+                        checked={v[p]?.level === l.id}
+                        onChange={() => setLevel(p, l.id)}
+                      />
+                      <span className="cell-radio-dot" aria-hidden="true"></span>
+                    </label>
+                  </td>
+                ))}
+                <td>
+                  <input
+                    className="cell-note"
+                    type="text"
+                    placeholder="입력"
+                    value={v[p]?.note || ""}
+                    onChange={e => setNote(p, e.target.value)}
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="price-cards">
+        {PROCEDURES.map((p, i) => (
+          <div className="price-card" key={p}>
+            <div className="price-card-num">{String(i+1).padStart(2,'0')}</div>
+            <div className="price-card-name">{p}</div>
+            <div className="price-card-body">
+              <div className="price-card-options">
+                {PRICE_LEVELS.map(l => (
+                  <label className="price-card-option" key={l.id}>
+                    <input
+                      type="radio"
+                      name={"price-m-" + p}
+                      checked={v[p]?.level === l.id}
+                      onChange={() => setLevel(p, l.id)}
+                    />
+                    <span className="price-card-chip">{l.label}</span>
+                  </label>
+                ))}
+              </div>
+              <label className="price-card-note-label">비고 · Notes</label>
+              <TextInput
+                value={v[p]?.note || ""}
+                onChange={x => setNote(p, x)}
+                placeholder="특이사항이 있다면 입력해 주세요"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </React.Fragment>
+  );
+}
+
+function Question({ q, num, value, onChange }) {
+  return (
+    <div className="q" data-qid={q.id}>
+      <div className="q-head">
+        <div className="q-num">
+          <small>Question</small>
+          № {num}
+        </div>
+        <h3 className="q-label">
+          {q.label}
+          {q.required && <span className="q-required" aria-label="필수">*</span>}
+        </h3>
+      </div>
+      {q.hint && <p className="q-hint">{q.hint}</p>}
+      {q.sub && <p className="q-hint">{q.sub}</p>}
+
+      <div className="q-body">
+        {q.kind === "text" && (
+          <TextInput value={value} onChange={onChange} placeholder={q.placeholder} />
+        )}
+        {q.kind === "textarea" && (
+          <TextArea value={value} onChange={onChange} rows={q.rows} placeholder={q.placeholder} />
+        )}
+        {q.kind === "identity" && (
+          <IdentityField value={value} onChange={onChange} />
+        )}
+        {q.kind === "price-table" && (
+          <PriceTable value={value} onChange={onChange} />
+        )}
+      </div>
+    </div>
+  );
+}
+
+function isAnswered(qid, val) {
+  if (qid === "q01") {
+    return val && val.hospital?.trim() && val.role && val.name?.trim();
+  }
+  return typeof val === "string" && val.trim().length > 0;
+}
+
+function App({ tweaks }) {
+  const [answers, setAnswers] = useState({});
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const r = document.documentElement;
+    r.style.setProperty("--scale", String(tweaks.fontScale));
+    r.style.setProperty("--w-body", String(tweaks.bodyWeight));
+    r.style.setProperty("--w-heading", String(tweaks.headingWeight));
+  }, [tweaks]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const doc = document.documentElement;
+      const max = (doc.scrollHeight - window.innerHeight) || 1;
+      setProgress(Math.min(100, Math.max(0, (window.scrollY / max) * 100)));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const set = (qid, v) => setAnswers(a => ({ ...a, [qid]: v }));
+
+  const requiredDone = useMemo(
+    () => REQUIRED.filter(id => isAnswered(id, answers[id])).length,
+    [answers]
+  );
+  const allRequired = requiredDone === REQUIRED.length;
+
+  const numFor = (id) => {
+    const all = SECTIONS.flatMap(s => s.questions);
+    return String(all.findIndex(q => q.id === id) + 1).padStart(2, "0");
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (!allRequired) return;
+    document.body.innerHTML = "<div style=\"display:grid;place-items:center;min-height:100vh;font-family:sans-serif;color:#1a2422;background:#f1ede3;text-align:center;padding:40px\"><div><h1 style=\"font-weight:300;font-size:32px;margin-bottom:16px\">설문이 제출되었습니다.</h1><p style=\"color:#5d6660\">소중한 응답에 감사드립니다.</p></div></div>";
+  };
+
+  const today = new Date();
+  const dateStr = `${today.getFullYear()}.${String(today.getMonth()+1).padStart(2,'0')}.${String(today.getDate()).padStart(2,'0')}`;
+
+  return (
+    <React.Fragment>
+      {/* Editorial top bar */}
+      <div className="topbar">
+        <div className="topbar-inner">
+          <div className="topbar-brand">
+            <span>Howon&amp;Company</span>
+          </div>
+          <div className="topbar-edition">
+            <em>No.</em> 026 · Medical Marketing Intake
+            <strong>{dateStr}</strong>
+          </div>
+        </div>
+        <div className="progress-rail">
+          <div className="progress-fill" style={{ width: progress + "%" }}></div>
+        </div>
+      </div>
+
+      <form className="page" onSubmit={onSubmit} noValidate>
+        {/* Masthead */}
+        <header className="masthead">
+          <div className="masthead-rule">
+            <span>For Dermatology Clinics</span>
+            <span className="line"></span>
+            <span className="serif">Confidential</span>
+          </div>
+
+          <h1>
+            바이럴 마케팅<br/>
+            분석 <span className="accent">사전 설문</span>
+          </h1>
+
+          <p className="lede">
+            분석에 앞서 귀 의료기관의 현황을 파악하기 위한 사전 설문입니다.
+            모든 항목에 성실히 응답해 주시기 바랍니다.
+          </p>
+
+          <div className="meta-grid">
+            <div>
+              <div className="k">Sections</div>
+              <div className="v"><span className="serif">06</span> 섹션</div>
+            </div>
+            <div>
+              <div className="k">Questions</div>
+              <div className="v"><span className="serif">14</span> 문항</div>
+            </div>
+            <div>
+              <div className="k">Estimated</div>
+              <div className="v"><span className="serif">8</span> 분 내외</div>
+            </div>
+          </div>
+        </header>
+
+        {/* Sections */}
+        {SECTIONS.map(s => (
+          <section className="section" key={s.id} id={"section-" + s.id}>
+            <div className="section-head">
+              <div className="section-numeral">{s.roman}</div>
+              <div className="section-head-r">
+                <div className="section-eyebrow">
+                  <span>Section {s.index}</span>
+                </div>
+                <h2 className="section-title">{s.title}</h2>
+                <div className="section-count">
+                  {s.questions.length} {s.questions.length > 1 ? "questions" : "question"}
+                </div>
+              </div>
+            </div>
+            {s.questions.map(q => (
+              <Question
+                key={q.id}
+                q={q}
+                num={numFor(q.id)}
+                value={answers[q.id]}
+                onChange={v => set(q.id, v)}
+              />
+            ))}
+          </section>
+        ))}
+
+        {/* Submit */}
+        <div className="submit-area">
+          <div className="submit-ornament">— ❦ —</div>
+          <div className="submit-eyebrow">Final Step</div>
+          <h2 className="submit-headline">
+            모든 응답을 검토하신 후<br/>제출해 주시기 바랍니다.
+          </h2>
+          <div className={"submit-summary" + (allRequired ? " complete" : "")}>
+            <span className="dot"></span>
+            필수 항목 <strong>{requiredDone}</strong> / {REQUIRED.length} 완료
+          </div>
+          <div>
+            <button
+              type="submit"
+              className="btn-submit"
+              disabled={!allRequired}
+            >
+              설문 제출하기
+              <span className="btn-arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      {/* Footer */}
+      <footer className="foot">
+        <div className="foot-inner">
+          <div className="foot-left">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 1.5L2.5 4v4c0 3 2.4 5.7 5.5 6.5 3.1-.8 5.5-3.5 5.5-6.5V4L8 1.5z"
+                    stroke="currentColor" strokeWidth="1" strokeLinejoin="round"/>
+              <path d="M6 8l1.5 1.5L10.5 6.5" stroke="currentColor" strokeWidth="1"
+                    strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span className="foot-note">
+              <span className="foot-line">본 설문의 모든 응답은 암호화되어 안전하게 전송되며,</span>
+              <span className="foot-line">바이럴 마케팅 컨설팅 목적 외에는 사용되지 않습니다.</span>
+            </span>
+          </div>
+          <div className="foot-right">
+            <div className="foot-mark">Howon &amp; Company</div>
+            <div className="foot-copy">© 2026 호원앤컴퍼니. All rights reserved.</div>
+          </div>
+        </div>
+      </footer>
+    </React.Fragment>
+  );
+}
+
+function Root() {
+  const { TweaksPanel, useTweaks, TweakSection, TweakSlider, TweakRadio } = window;
+  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  return (
+    <React.Fragment>
+      <App tweaks={tweaks} />
+      <TweaksPanel>
+        <TweakSection title="타이포그래피">
+          <TweakSlider
+            label="전체 크기 스케일"
+            value={tweaks.fontScale}
+            min={0.9} max={1.15} step={0.01}
+            onChange={v => setTweak("fontScale", v)}
+            format={v => v.toFixed(2) + "×"}
+          />
+          <TweakRadio
+            label="본문 굵기"
+            value={tweaks.bodyWeight}
+            options={[
+              { value: 300, label: "Light" },
+              { value: 400, label: "Regular" },
+              { value: 500, label: "Medium" }
+            ]}
+            onChange={v => setTweak("bodyWeight", v)}
+          />
+          <TweakRadio
+            label="제목 굵기"
+            value={tweaks.headingWeight}
+            options={[
+              { value: 300, label: "Light" },
+              { value: 400, label: "Regular" },
+              { value: 500, label: "Medium" }
+            ]}
+            onChange={v => setTweak("headingWeight", v)}
+          />
+        </TweakSection>
+      </TweaksPanel>
+    </React.Fragment>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<Root />);
+
+  </script>
+</body>
+</html>
