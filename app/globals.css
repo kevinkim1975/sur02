@@ -78,6 +78,7 @@ body {
     radial-gradient(ellipse 80% 50% at 0% 80%, rgba(31, 58, 48, 0.04), transparent 70%),
     var(--paper);
   min-height: 100vh;
+  caret-color: transparent;
 }
 
 /* ---------- Editorial top bar ---------- */
@@ -447,6 +448,7 @@ body {
 .textarea {
   width: 100%;
   font: inherit;
+  caret-color: var(--ink);
   font-size: calc(var(--fs-body-l) * var(--scale));
   letter-spacing: var(--ls-body-l);
   color: var(--ink);
@@ -695,6 +697,7 @@ body {
   border-bottom: 1px solid transparent;
   background: transparent;
   font: inherit;
+  caret-color: var(--ink);
   font-size: calc(var(--fs-small) * var(--scale));
   letter-spacing: var(--ls-small);
   color: var(--ink-2);
