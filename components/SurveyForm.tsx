@@ -75,38 +75,37 @@ export default function SurveyForm() {
 
     for (const q of questions) {
       const upperId = q.id.toUpperCase();
-      const label = getQuestionLabel(q);
 
       if (q.type === 'identity') {
         const hospital = (formData[`${q.id}_hospital`] || '').trim();
         const role = formData[`${q.id}_role`] || '';
         const name = (formData[`${q.id}_name`] || '').trim();
-        if (hospital) payload[`[${upperId}] 병원명`] = hospital;
-        if (role) payload[`[${upperId}] 직급`] = role;
-        if (name) payload[`[${upperId}] 성명`] = name;
+        if (hospital)
+          payload[`[${upperId}] 병원명`] = `[질문] 병원명\n[답변] ${hospital}`;
+        if (role)
+          payload[`[${upperId}] 직급`] = `[질문] 직급\n[답변] ${role}`;
+        if (name)
+          payload[`[${upperId}] 성명`] = `[질문] 성명\n[답변] ${name}`;
         continue;
       }
 
       if (q.type === 'priceTable') {
         const procedures = q.procedures ?? [];
-        const filled: string[] = [];
         procedures.forEach((proc, i) => {
           const level = formData[`${q.id}_level_${i}`] || '';
           const note = (formData[`${q.id}_note_${i}`] || '').trim();
           if (level || note) {
             const levelLabel =
               q.priceLevels?.find((l) => l.id === level)?.label || level;
-            filled.push(`${proc}:${levelLabel}:${note}`);
+            payload[`[${upperId}] ${proc}`] =
+              `[질문] ${proc} 가격 수준\n[답변] ${levelLabel} / 비고: ${note || '없음'}`;
           }
         });
-        if (filled.length > 0) {
-          payload[`[${upperId}] ${label}`] = filled.join(' | ');
-        }
         continue;
       }
 
       const v = (formData[q.id] || '').trim();
-      if (v) payload[`[${upperId}] ${label}`] = v;
+      if (v) payload[`[${upperId}]`] = `[질문] ${q.label}\n[답변] ${v}`;
     }
 
     return payload;
