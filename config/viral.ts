@@ -120,9 +120,8 @@ export const viralConfig: SurveyConfig = {
       id: 'q09',
       section: 'D',
       sectionTitle: '마케팅 목표',
-      label: '현재 광고 대행사가 있다면 마케팅에서 가장 어렵거나 불만족스러운 점은 무엇인가요?',
+      label: '현재 마케팅 대행사를 이용하고 계신가요? 이용 중이라면 만족도와 불만족스러운 점을 알려주세요. 대행사가 없다면 원하는 것을 적어주시면 됩니다.',
       type: 'textarea',
-      hint: '대행사가 없다면 원하는 것을 적어주시면 됩니다.',
       required: true,
       rows: 6,
     },
@@ -141,15 +140,6 @@ export const viralConfig: SurveyConfig = {
       id: 'q11',
       section: 'E',
       sectionTitle: '경쟁 & 예산',
-      label: '현재 마케팅 대행사를 이용하고 계신가요? 이용 중이라면 만족도는 어떠신가요?',
-      type: 'textarea',
-      required: false,
-      rows: 4,
-    },
-    {
-      id: 'q12',
-      section: 'E',
-      sectionTitle: '경쟁 & 예산',
       label: '현재 운영 중인 광고 계정(네이버, 메타 등)의 수치나 설정을 직접 살펴볼 수 있다면 더욱 정밀한 분석과 전략 제안이 가능합니다. 혹시 조회 권한 부여가 가능한지 확인해 주세요.',
       type: 'textarea',
       hint: '어려우시다면 \'불가\'라고 적어주세요.',
@@ -157,7 +147,7 @@ export const viralConfig: SurveyConfig = {
       rows: 3,
     },
     {
-      id: 'q13',
+      id: 'q12',
       section: 'E',
       sectionTitle: '경쟁 & 예산',
       label: '귀 의료기관의 시술 가격은 경쟁 의료기관 대비 어떤 수준인가요?',
@@ -169,7 +159,7 @@ export const viralConfig: SurveyConfig = {
     },
     // Section F — 브랜드 & 차별화
     {
-      id: 'q14',
+      id: 'q13',
       section: 'F',
       sectionTitle: '브랜드 & 차별화',
       label: '경쟁 병원과 차별화하려고 하는 요소는 무엇인가요?',
@@ -179,7 +169,7 @@ export const viralConfig: SurveyConfig = {
       rows: 6,
     },
     {
-      id: 'q15',
+      id: 'q14',
       section: 'F',
       sectionTitle: '브랜드 & 차별화',
       label: '지역 내 잠재 고객층의 특성에 대해서 알고 있는 부분을 설명하여 주십시오.',
@@ -189,7 +179,7 @@ export const viralConfig: SurveyConfig = {
       rows: 6,
     },
     {
-      id: 'q16',
+      id: 'q15',
       section: 'F',
       sectionTitle: '브랜드 & 차별화',
       label: '병원의 브랜드 컨셉과 지향점에 대해서 설명해 주십시오.',
